@@ -1,0 +1,15 @@
+<h3>Total Belanja: <b>Rp.<%= @bayar %></b></h3>
+
+<%= form_for @transaction do |transaction| %>
+
+    <%= transaction.hidden_field :totalTransaction, value:@bayar %>
+    <%= hidden_field_tag(:step, "save") %>
+
+    <% @keranjang.each do | index, val | %>  
+        <%= hidden_field_tag('keranjang['+index+']', val) %>
+    <% end %>
+
+    <%= transaction.submit :Lanjutkan, class:'btn btn-success' %>
+    <%= link_to 'Kembali', 'javascript:history.back()' %>
+
+<% end %>

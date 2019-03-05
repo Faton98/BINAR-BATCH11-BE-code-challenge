@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  idStock: 1
+  namaBarang: MyString
+  hargaBarang: 1
+  jumlagStock: 1
+
+two:
+  idStock: 1
+  namaBarang: MyString
+  hargaBarang: 1
+  jumlagStock: 1

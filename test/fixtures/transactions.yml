@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  idTransaction: 1
+  dateTransaction: MyString
+  totalTransaction: 1
+
+two:
+  idTransaction: 1
+  dateTransaction: MyString
+  totalTransaction: 1

@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <%= render 'navigation' %>
+    <h2>Data Barang</h2>
+    <%= link_to 'Tambah Stock', stocks_new_path, class: 'btn btn-default' %>
+    <table border="1" class="table table-bordered table-hover table-responsive">
+      <thead>
+      <tr>
+        <th class="text-center">Id Barang</th>
+        <th class="text-center">Nama Barang</th>
+        <th class="text-center">Harga Barang</th>
+        <th class="text-center">Persediaan</th>
+        <th class="text-center">Aksi</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @stocks.each do |stock| %>
+          <tr>
+            <td><%= stock.idStock %></td>
+            <td><%= stock.namaBarang %></td>
+            <td><%= stock.hargaBarang %></td>
+            <td><%= stock.jumlagStock %></td>
+            <td class="text-center">
+              <%= link_to 'Detail', stock_path(stock), class: 'btn btn-default' %>
+              <%= link_to 'Edit', edit_stock_path(stock), class: 'btn btn-success' %>
+              <%= link_to 'Delete',stock_path(stock), method: :delete, data: {confirm: 'Data Dihapus ? '}, class: 'btn btn-danger' %>
+            </td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

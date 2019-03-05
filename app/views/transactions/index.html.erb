@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+  <%= render 'stocks/navigation' %>
+    <h2>Riwayat Transaksi</h2>
+    <table border="1" class="table table-bordered table-hover table-responsive">
+      <thead>
+      <tr>
+        <th class="text-center">Id Transaksi</th>
+        <th class="text-center">Tanggal Transaksi</th>
+        <th class="text-center">Total Bayar</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @transactions.each do |transaction| %>
+          <tr>
+            <td><%= transaction.id %></td>
+            <td><%= transaction.created_at %></td>
+            <td><%= transaction.totalTransaction %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

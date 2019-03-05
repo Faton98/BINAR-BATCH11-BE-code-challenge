@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <%= form_for @transaction do |transaction| %>
+
+        <h2>Pilih barang yang dibeli:</h2>
+        <%= hidden_field_tag(:step, "preview") %>
+        <% @stocks.each do |stock| %>
+            <div style="width:500px;border:1px solid #ddd;padding:10px;margin-bottom:-1px">
+                <%= number_field_tag 'keranjang['+stock.id.to_s+']', 0, min:0, max:stock.jumlagStock  %>
+                <%= stock.namaBarang %>
+                <b style="float:right">Rp.<%= stock.hargaBarang %></b>
+            </div>
+        <% end %>
+        
+        <br>
+
+        <%= transaction.submit :Save, class:'btn btn-success' %>
+        <%= link_to 'Back', 'javascript:history.back()' %>
+
+    <% end %>
+  </div>
+</div>

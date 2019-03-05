@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <%= form_for(@stock) do |stock| %>
+
+        <div class="form-group">
+          <%= stock.label :ID_Barang %>
+          <%= stock.text_field :idStock, class:'form-control', type: 'text', placeholder: 'ID Barang', disabled: true  %>
+        </div>
+
+        <div class="form-group">
+          <%= stock.label :Nama_Barang %>
+          <%= stock.text_field :namaBarang, class:'form-control', type: 'text', placeholder: 'Nama Barang', disabled: true  %>
+        </div>
+
+        <div class="form-group">
+          <%= stock.label :Harga_Barang %>
+          <%= stock.text_field :hargaBarang, class:'form-control', type: 'text', placeholder: 'Harga Barang', disabled: true  %>
+        </div>
+
+        <div class="form-group">
+          <%= stock.label :Jumlah_Stock %>
+          <%= stock.text_field :jumlagStock, class:'form-control', type: 'text', placeholder: 'Jumlah', disabled: true  %>
+        </div>
+
+    <% end %>
+  </div>
+</div>
